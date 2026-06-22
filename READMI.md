@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Blog Application
 
 
@@ -38,3 +39,15 @@ created_at
 - View Posts
 - Edit Posts
 - Delete Posts
+=======
+# ApexPlanet Internship
+
+Task 1 - Development Environment Setup
+
+Technologies:
+- PHP
+- MySQL
+- Git
+- GitHub
+- XAMPP
+>>>>>>> 12cd39118c0ab05d07cd34f80ec2dd24e2d1af62
