@@ -44,50 +44,50 @@ if (isset($_POST['login'])) {
 include "../config/header.php";
 ?>
 
-<div class="form-container">
-    <div class="form-card">
-        <h2>Login</h2>
-        <p class="form-subtitle">Welcome back! Log in to manage your posts</p>
+<div class="form-container" style="max-width: 480px; margin: 40px auto;">
+    <div class="form-card p-4 p-md-5 rounded-4 shadow-lg" style="background: var(--bg-glass); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.6);">
+        <h2 class="text-center fw-bold mb-1">Login</h2>
+        <p class="form-subtitle text-center text-secondary mb-4 small">Welcome back! Log in to manage your posts</p>
         
         <?php if (!empty($error)): ?>
-            <div class="alert alert-danger">
-                <i class="fa-solid fa-circle-exclamation"></i> <?php echo $error; ?>
+            <div class="alert alert-danger py-2.5 px-3 d-flex align-items-center gap-2 border border-danger-subtle rounded-2 mb-3">
+                <i class="fa-solid fa-circle-exclamation"></i> <span><?php echo htmlspecialchars($error); ?></span>
             </div>
         <?php endif; ?>
 
         <form method="post" action="login.php">
-            <div class="form-group">
-                <label for="username">Username</label>
+            <div class="mb-3">
+                <label for="username" class="form-label fw-semibold small text-dark mb-1">Username</label>
                 <input 
                     type="text" 
                     id="username" 
                     name="username" 
-                    class="form-control" 
+                    class="form-control py-2.5 px-3 rounded-2 shadow-none border" 
                     placeholder="Enter your username" 
                     value="<?php echo isset($username) ? htmlspecialchars($username) : ''; ?>"
                     required
                 >
             </div>
             
-            <div class="form-group">
-                <label for="password">Password</label>
+            <div class="mb-4">
+                <label for="password" class="form-label fw-semibold small text-dark mb-1">Password</label>
                 <input 
                     type="password" 
                     id="password" 
                     name="password" 
-                    class="form-control" 
+                    class="form-control py-2.5 px-3 rounded-2 shadow-none border" 
                     placeholder="Enter your password" 
                     required
                 >
             </div>
             
-            <button type="submit" name="login" class="btn btn-primary form-submit-btn">
+            <button type="submit" name="login" class="btn btn-primary py-2.5 w-100 rounded-2 d-flex align-items-center justify-content-center gap-2 mb-3">
                 <i class="fa-solid fa-right-to-bracket"></i> Login
             </button>
         </form>
         
-        <div class="form-footer">
-            Don't have an account? <a href="register.php">Register now</a>
+        <div class="form-footer text-center text-muted small">
+            Don't have an account? <a href="register.php" class="text-primary fw-semibold text-decoration-none">Register now</a>
         </div>
     </div>
 </div>

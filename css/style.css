@@ -623,3 +623,15 @@ textarea.form-control {
         padding: 24px;
     }
 }
+
+/* Custom Extensions */
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 3rem rgba(79, 70, 229, 0.175) !important;
+}
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}

@@ -1,53 +1,112 @@
-<<<<<<< HEAD
-# Blog Application
+# Basic CRUD Application
 
+## Project Overview
 
-## Database
-
-Database Name:
-blog
-
-
-Tables:
-
-1. users
-
-Columns:
-
-id
-username
-password
-
-
-2. posts
-
-Columns:
-
-id
-title
-content
-created_at
-
+This project is a simple Blog Application developed using PHP and MySQL. It demonstrates CRUD (Create, Read, Update, Delete) operations along with basic user authentication.
 
 ## Features
 
-- User Registration
-- Login
-- Password Hashing
-- Session Management
-- Create Posts
-- View Posts
-- Edit Posts
-- Delete Posts
-=======
-# ApexPlanet Internship
+* User Registration
+* User Login
+* User Logout
+* Create Blog Posts
+* View Blog Posts
+* Edit Blog Posts
+* Delete Blog Posts
+* Password Hashing
+* Session Management
 
-Task 1 - Development Environment Setup
+## Technologies Used
 
-Technologies:
-- PHP
-- MySQL
-- Git
-- GitHub
-- XAMPP
->>>>>>> 12cd39118c0ab05d07cd34f80ec2dd24e2d1af62
+* PHP
+* MySQL
+* HTML
+* CSS
+* XAMPP
+
+## Database Setup
+
+1. Create a database named `blog`.
+2. Create the following tables:
+
+### Users Table
+
+```sql
+CREATE TABLE users(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(100),
+    password VARCHAR(255)
+);
+```
+
+### Posts Table
+
+```sql
+CREATE TABLE posts(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255),
+    content TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+## Project Structure
+
+```text
+blog-project/
+│
+├── config/
+│   └── database.php
+│
+├── auth/
+│   ├── register.php
+│   ├── login.php
+│   └── logout.php
+│
+├── posts/
+│   ├── add_post.php
+│   ├── edit_post.php
+│   └── delete_post.php
+│
+├── index.php
+└── blog.sql
+```
+
+## How to Run
+
+1. Install XAMPP.
+2. Start Apache and MySQL.
+3. Import the database into phpMyAdmin.
+4. Copy the project folder to the `htdocs` directory.
+5. Open your browser and visit:
+
+```text
+http://localhost/blog-project
+```
+
+## CRUD Operations
+
+### Create
+
+Add new blog posts.
+
+### Read
+
+View all blog posts.
+
+### Update
+
+Edit existing blog posts.
+
+### Delete
+
+Remove blog posts from the database.
+
+## Output
+
+The application allows users to register, log in, manage blog posts, and securely store user credentials using password hashing.
+
+## Author
+
+Naveen Kumar Dasari
+

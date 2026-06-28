@@ -63,47 +63,52 @@ if (isset($_POST['update'])) {
 include "../config/header.php";
 ?>
 
-<div class="form-container">
-    <div class="form-card" style="max-width: 600px; margin: 0 auto;">
-        <h2>Edit Post</h2>
-        <p class="form-subtitle">Make changes to your published article</p>
+<div class="form-container" style="max-width: 600px; margin: 40px auto;">
+    <div class="form-card p-4 p-md-5 rounded-4 shadow-lg" style="background: var(--bg-glass); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.6);">
+        <h2 class="text-center fw-bold mb-1">Edit Post</h2>
+        <p class="form-subtitle text-center text-secondary mb-4 small">Make changes to your published article</p>
 
         <?php if (!empty($error)): ?>
-            <div class="alert alert-danger">
-                <i class="fa-solid fa-circle-exclamation"></i> <?php echo $error; ?>
+            <div class="alert alert-danger py-2.5 px-3 d-flex align-items-center gap-2 border border-danger-subtle rounded-2 mb-3">
+                <i class="fa-solid fa-circle-exclamation"></i> <span><?php echo htmlspecialchars($error); ?></span>
             </div>
         <?php endif; ?>
 
         <form method="post" action="edit.php?id=<?php echo $id; ?>">
-            <div class="form-group">
-                <label for="title">Post Title</label>
+            <div class="mb-3">
+                <label for="title" class="form-label fw-semibold small text-dark mb-1">Post Title</label>
                 <input 
                     type="text" 
                     id="title" 
                     name="title" 
-                    class="form-control" 
+                    class="form-control py-2.5 px-3 rounded-2 shadow-none border" 
                     value="<?php echo isset($title) ? htmlspecialchars($title) : htmlspecialchars($post['title']); ?>"
                     required
                 >
             </div>
 
-            <div class="form-group">
-                <label for="content">Content</label>
+            <div class="mb-4">
+                <label for="content" class="form-label fw-semibold small text-dark mb-1">Content</label>
                 <textarea 
                     id="content" 
                     name="content" 
-                    class="form-control" 
+                    class="form-control py-2.5 px-3 rounded-2 shadow-none border" 
+                    style="min-height: 200px;"
                     required
                 ><?php echo isset($content) ? htmlspecialchars($content) : htmlspecialchars($post['content']); ?></textarea>
             </div>
 
-            <div style="display: flex; gap: 12px; margin-top: 10px;">
-                <button type="submit" name="update" class="btn btn-primary" style="flex: 1; justify-content: center;">
-                    <i class="fa-solid fa-circle-check"></i> Save Changes
-                </button>
-                <a href="viewposts.php" class="btn btn-secondary" style="flex: 1; justify-content: center; text-decoration: none;">
-                    Cancel
-                </a>
+            <div class="row g-3">
+                <div class="col-6">
+                    <button type="submit" name="update" class="btn btn-primary w-100 py-2.5 rounded-2 d-flex align-items-center justify-content-center gap-2">
+                        <i class="fa-solid fa-circle-check"></i> Save Changes
+                    </button>
+                </div>
+                <div class="col-6">
+                    <a href="viewposts.php" class="btn btn-secondary w-100 py-2.5 rounded-2 d-flex align-items-center justify-content-center border-secondary-subtle text-dark">
+                        Cancel
+                    </a>
+                </div>
             </div>
         </form>
     </div>
